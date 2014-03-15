@@ -28,8 +28,14 @@ setup(
 		'Django'
 	],
 	classifiers=[
+		'Environment :: Web Environment',
 		'Framework :: Django',
-		'Programming Language :: Python',
-		'Programming Language :: Python 3'
+		'Intended Audience :: Developers',
+		'Intended Audience :: Developers',
+		'Programming Language :: Python :: 2.7',
+		'Programming Language :: Python :: 3',
+		'Programming Language :: Python :: 3.3',
+		'Topic :: Software Development :: Libraries :: Python Modules',
+		'Topic :: Utilities'
 	]
 )
