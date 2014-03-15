@@ -11,7 +11,7 @@ $ pip install django-alacarte
 
 ## Usage
 
-Add "alacarte" to your INSTALLED_APPS:
+Add "alacarte" to your *INSTALLED_APPS*:
 
 ```python
 INSTALLED_APPS = (
@@ -20,7 +20,22 @@ INSTALLED_APPS = (
 )
 ```
 
-Create a menu.py inside your app and register your menus:
+In your root _urls.py_ add the following code:
+
+```python
+# ...
+
+import alacarte
+alacarte.autodiscover()
+
+# Your url patterns
+```
+
+
+Alacarte uses that to automatically discover and load _menu.py_ files inside each one of your *INSTALLED_APPS*.
+
+
+Create a file called _menu.py_ inside the app of your choice and register its corresponding menus:
 
 ```python
 import alacarte
