@@ -72,6 +72,10 @@ Then in your template:
 {# ... #}
 ```
 
+## Todo
+
+- Sitemap generation
+
 -----
 
 `django-alacarte` is not related to https://pypi.python.org/pypi/alacarte
