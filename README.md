@@ -74,6 +74,8 @@ Then in your template:
 
 ## Todo
 
+- Active item highlighting
+- Navigation breadcrumbs
 - Sitemap generation
 
 -----
