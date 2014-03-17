@@ -87,12 +87,6 @@ Then in your template:
 {# ... #}
 ```
 
-## Todo
-
-- Active item highlighting
-- Navigation breadcrumbs
-- Sitemap generation
-
 -----
 
 `django-alacarte` is not related to https://pypi.python.org/pypi/alacarte
