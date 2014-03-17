@@ -34,7 +34,4 @@ class Menu:
 		if hasattr(cls, 'submenus'):
 			sub_urls = any([s.is_active() for s in cls.submenus])
 
-		if url or sub_urls:
-			print('%s is active' % cls.label)
-
 		return url or sub_urls
