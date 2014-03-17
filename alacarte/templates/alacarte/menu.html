@@ -2,7 +2,7 @@
 <ul>
 	{% for menu in menus %}
 	{% if menu.shown %}
-	<li>
+	<li{% if menu.is_active %} class="active"{% endif %}>
 		{% if menu.icon %}
 		<img src="{{ STATIC_URL }}{{ menu.icon }}">
 		{% endif %}
@@ -15,9 +15,11 @@
 		<ul>
 			{% for sub in menu.submenus %}
 			{% if sub.shown %}
-			<li><a href="{{ sub.url }}">
-				{{ sub.label }}
-			</a></li>
+			<li{% if sub.is_active %} class="active"{% endif %}>
+				<a href="{{ sub.url }}">
+					{{ sub.label }}
+				</a>
+			</li>
 			{% endif %}
 			{% endfor %}
 		</ul>
