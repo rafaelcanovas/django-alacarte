@@ -64,9 +64,9 @@ class BankMenu(alacarte.Menu):
 	group = 'main'
 	label = 'Bank'
 	submenus = (
-		BankTransactionsMenu,
-		BankBalanceMenu,
-		BankPremiumMenu,
+		BankTransactionsMenu(),
+		BankBalanceMenu(),
+		BankPremiumMenu(),
 	)
 
 	def shown(self):

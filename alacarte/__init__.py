@@ -14,12 +14,15 @@ MENU_REGISTRY = defaultdict(list)
 
 
 def register(menu_class):
+	# Instantiate the menu class before registering it
+	menu = menu_class()
+
 	try:
-		group = menu_class.group
+		group = menu.group
 	except AttributeError:
 		group = ''
 
-	MENU_REGISTRY[group].append(menu_class)
+	MENU_REGISTRY[group].append(menu)
 
 
 def get_menus(group):
