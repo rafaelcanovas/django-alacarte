@@ -13,7 +13,7 @@ except (ImportError, OSError, IOError):
 
 setup(
 	name='django-alacarte',
-	version='0.1.2',
+	version='0.1.3',
 	description='A minimalist Django menu app.',
 	long_description=readme,
 	author='Rafael Canovas',
