@@ -2,6 +2,8 @@ from django.core.urlresolvers import reverse, NoReverseMatch
 
 
 class Menu:
+	submenus = ()
+
 	def shown(self):
 		"""
 		All menus are shown by default.
