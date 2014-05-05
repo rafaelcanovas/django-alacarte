@@ -80,6 +80,7 @@ alacarte.register(BankMenu)
 Then in your template:
 
 ```django
+{% load alacarte %}
 {# ... #}
 	{# ... #}
 	{% alacarte "main" %}
