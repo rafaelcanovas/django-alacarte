@@ -26,7 +26,18 @@ def register(menu_class):
 
 
 def get_menus(group):
-	return MENU_REGISTRY[group]
+	"""
+	Get the group corresponding menus from the menu registry and order
+	them using the 'order' attribute
+	"""
+
+	menus = MENU_REGISTRY[group]
+	menus = sorted(
+		menus,
+		key=lambda m: (hasattr(m, 'order'), getattr(m, 'order', None)),
+		reverse=True
+	)
+	return menus
 
 
 def autodiscover():
