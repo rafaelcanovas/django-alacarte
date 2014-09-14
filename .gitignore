@@ -53,6 +53,14 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+### VirtualEnv ###
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ss]cripts
 
 ### Django ###
 *.log
