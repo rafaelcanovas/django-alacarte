@@ -13,24 +13,36 @@ from alacarte.menus import Menu
 MENU_REGISTRY = defaultdict(list)
 
 
-def register(menu_class):
-	# Instantiate the menu class before registering it
-	menu = menu_class()
+def register(*menu_classes):
+	"""
+	Register one or more menu classes in the menu registry.
+	"""
+	for menu_class in menu_classes:
+		# Instantiate the menu class before registering it
+		menu = menu_class()
 
-	try:
-		group = menu.group
-	except AttributeError:
-		group = ''
+		try:
+			group = menu.group
+		except AttributeError:
+			group = ''
 
-	MENU_REGISTRY[group].append(menu)
+		MENU_REGISTRY[group].append(menu)
+
+
+def clear_registry():
+	"""
+	Clear alacarte's menu registry.
+	Useful for testing.
+	"""
+	global MENU_REGISTRY
+	MENU_REGISTRY.clear()
 
 
 def get_menus(group):
 	"""
 	Get the group corresponding menus from the menu registry and order
-	them using the 'order' attribute
+	them using the 'order' attribute.
 	"""
-
 	menus = MENU_REGISTRY[group]
 	menus = sorted(
 		menus,
@@ -43,9 +55,8 @@ def get_menus(group):
 def autodiscover():
 	"""
 	Discover and load menu.py files from all INSTALLED_APPS.
-	Heavily inspired by django.contrib.admin.autodiscover
+	Heavily inspired by django.contrib.admin.autodiscover.
 	"""
-
 	for app in settings.INSTALLED_APPS:
 		mod = import_module(app)
 		try:
