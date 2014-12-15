@@ -1,5 +1,5 @@
 __title__ = 'alacarte'
-__version__ = '0.1.31'
+__version__ = '0.1.4'
 __author__ = 'Rafael Canovas'
 
 from collections import defaultdict
