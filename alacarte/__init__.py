@@ -10,6 +10,8 @@ from django.utils.module_loading import module_has_submodule
 
 from alacarte.menus import Menu
 
+default_app_config = 'alacarte.apps.AlacarteConfig'
+
 MENU_REGISTRY = defaultdict(list)
 
 

@@ -9,7 +9,8 @@ BASE_DIR = os.path.realpath(os.path.dirname(__file__))
 from django.conf import settings
 if not settings.configured:
 	settings.configure(
-		TEMPLATE_DIRS=(os.path.join(BASE_DIR, 'templates'),)
+		INSTALLED_APPS=['alacarte'],
+		TEMPLATE_DIRS=[os.path.join(BASE_DIR, 'templates')]
 	)
 
 import django
@@ -61,7 +62,6 @@ class AlacartTestCase(unittest.TestCase):
 	def test_render(self):
 		c = Context({'menus': alacarte.get_menus('test')})
 		t = render_to_string('alacarte/menu.html', c)
-		print(t)
 		self.assertNotEqual(len(t), 0)
 
 

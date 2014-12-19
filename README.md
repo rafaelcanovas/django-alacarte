@@ -31,9 +31,7 @@ alacarte.autodiscover()
 # Your url patterns
 ```
 
-
-Alacarte uses that to automatically discover and load _menu.py_ files inside each one of your *INSTALLED_APPS*.
-
+Note: You don't need this if you use Django >= 1.7, autodiscovery is made automatically with AppConfig.
 
 Create a file called _menu.py_ inside the app of your choice and register its corresponding menus:
 
@@ -87,6 +85,11 @@ Then in your template:
 	{# ... #}
 {# ... #}
 ```
+
+## Support
+
+- Django >= 1.3
+- Tested on Python 2.7 and 3.4
 
 -----
 
