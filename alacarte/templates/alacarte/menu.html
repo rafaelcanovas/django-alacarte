@@ -1,19 +1,19 @@
 {% if menus %}
 <ul>
-	{% for menu in menus %}
-	{% if menu.shown %}
-	<li{% if menu.is_active %} class="active"{% endif %}>
-		{% if menu.icon %}
-		<img src="{{ STATIC_URL }}{{ menu.icon }}">
-		{% endif %}
+    {% for menu in menus %}
+    {% if menu.shown %}
+    <li{% if menu.is_active %} class="active"{% endif %}>
+        {% if menu.icon %}
+        <img src="{{ STATIC_URL }}{{ menu.icon }}">
+        {% endif %}
 
-		<a href="{{ menu.url }}">
-			{{ menu.label }}
-		</a>
+        <a href="{{ menu.url }}">
+            {{ menu.label }}
+        </a>
 
-		{% include "alacarte/menu.html" with menus=menu.submenus %}
-	</li>
-	{% endif %}
-	{% endfor %}
+        {% include "alacarte/menu.html" with menus=menu.submenus %}
+    </li>
+    {% endif %}
+    {% endfor %}
 </ul>
 {% endif %}
