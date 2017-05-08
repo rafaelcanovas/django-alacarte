@@ -18,10 +18,9 @@ class AlacarteNode(template.Node):
             m.context = context
             for s in m.submenus:
                 s.context = context
-
-        return render_to_string('alacarte/menu.html', {
-            'menus': self.menus
-        }, context)
+        f_context = context.flatten()
+        f_context['menus'] = self.menus
+        return render_to_string('alacarte/menu.html', f_context)
 
 
 @register.tag
